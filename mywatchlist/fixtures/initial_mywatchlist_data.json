@@ -1,0 +1,111 @@
+[{
+        "model": "mywatchlist.mywatchlistitem",
+        "pk": 1,
+        "fields": {
+            "watched": "watched",
+            "title": "squid games",
+            "rating": 5,
+            "release_date": "Nov 2020",
+            "review": "SQUID GAMES!!"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlistitem",
+        "pk": 2,
+        "fields": {
+            "watched": "not watched",
+            "title": "squid games 2",
+            "rating": 1,
+            "release_date": "Dec 2022",
+            "review": "SQUID GAMES LAGI?💀"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlistitem",
+        "pk": 3,
+        "fields": {
+            "watched": "not watched",
+            "title": "squid games 3",
+            "rating": 1,
+            "release_date": "Jan 2031",
+            "review": "SQUID GAMES TRUS?!😐"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlistitem",
+        "pk": 4,
+        "fields": {
+            "watched": "watched",
+            "title": "breaking bad",
+            "rating": 5,
+            "release_date": "Feb 2009",
+            "review": "say my name "
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlistitem",
+        "pk": 5,
+        "fields": {
+            "watched": "watched",
+            "title": "better call saul",
+            "rating": 5,
+            "release_date": "Mar 2016",
+            "review": "He orchestrated it! Jimmy!"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlistitem",
+        "pk": 6,
+        "fields": {
+            "watched": "watched",
+            "title": "el camino",
+            "rating": 5,
+            "release_date": "Jul 2018",
+            "review": "we need to cook jesse"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlistitem",
+        "pk": 7,
+        "fields": {
+            "watched": "not watched",
+            "title": "stranger things",
+            "rating": 4,
+            "release_date": "Oct 2017",
+            "review": "stranger things is that ive ever loved you💯"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlistitem",
+        "pk": 8,
+        "fields": {
+            "watched": "not watched",
+            "title": "avengers",
+            "rating": 2,
+            "release_date": "Jan 2010",
+            "review": "ok movie"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlistitem",
+        "pk": 9,
+        "fields": {
+            "watched": "not watched",
+            "title": "elvis",
+            "rating": 3,
+            "release_date": "Sep 2022",
+            "review": "rockstar man"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlistitem",
+        "pk": 10,
+        "fields": {
+            "watched": "watched",
+            "title": "boss baby",
+            "rating": 5,
+            "release_date": "May 2017",
+            "review": "sip bos"
+        }
+    }
+]

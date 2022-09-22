@@ -1,0 +1,27 @@
+{% extends 'base.html' %} {% load static %}
+
+<link rel="stylesheet" href="{% static 'main.css' %}"> {% block content %}
+<h1>Tugas 3 Assignment PBP/PBD</h1>
+
+<h5>Name: </h5>
+<p>{{nama}}</p>
+
+<h5>Student ID: </h5>
+<p>{{student_id}}</p>
+
+<div class="main">
+    <div class="sub">
+        <h2>Tugas 3 PBP</h2>
+        <div class="assignment">
+            <h2 class="link">Hit these buttons below</h1>
+                <button onclick="location.href='/mywatchlist/html' ">HTML</button>
+                <button onclick="location.href='/mywatchlist/xml' ">XML</button>
+                <button onclick="location.href='/mywatchlist/json' ">JSON</button>
+        </div>
+    </div>
+</div>
+<div class="result">
+    <p class="result_statement"> {{result}}</p>
+    <p class="result__desc">You've watched {{watched}} and haven't watched {{not_watched}}</p>
+</div>
+{% endblock content %}

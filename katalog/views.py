@@ -12,4 +12,3 @@ def show_katalog(request):
     }
 
     return render(request, 'katalog.html', context)
-# TODO: Create your views here.
