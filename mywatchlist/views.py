@@ -16,7 +16,7 @@ def show_mywatchlist(request):
             
     if watched > not_watched:
         result = "Selamat, kamu sudah banyak menonton!"
-    elif watched == not_watched:
+    elif watched < not_watched:
         result = "wah, kamu masih sedikit menonton!"
     else:
         result = "jumlah film yang kamu nonton sama dengan film yang kamu tidak tonton"
