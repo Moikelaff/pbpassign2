@@ -10,8 +10,21 @@ karena ada transfer data antar client dan server maka kita perlu memakai data de
 ---
 3. cara pengeimplementasian checklist <br>
 ---
-    - startapp mywatchlist
-    - add path and app di project_django
-    - membuat model sesuai kemauan <strike>asdos</strike> client
-    - migrate and load fixture data
+    1. startapp mywatchlist
+    2. add path and app di project_django
+    3. membuat model sesuai kemauan client
+    4. migrate and load fixture data
 
+## Postman
+
+### HTML 
+![HTML](static/mywatchlist_html.jpg?raw=true)
+<br>
+
+### JSON
+![JSON](static/mywatchlist_json.jpg?raw=true)
+<br>
+
+### XML
+![XML](static/mywatchlist_xml.jpg?raw=true)
+<br>
