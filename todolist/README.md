@@ -3,6 +3,6 @@
     
     jika tidak ada csrf token maka user dapat mengakses link2 yang sensitive yang restricted bagi umum
 ---
-# 2. apakah kita dapat membuat elemen <code>form</code> secara manual(tanpa menggunaka generator seperti <code>{{ form.as_table }}</code>)? jelaskan secara gambaran besar bagaimana cara membuat <code>form</code> secara manual.
-    bisa, caranya dengan membuat
+# 2. apakah kita dapat membuat elemen <code>form</code> secara manual(tanpa menggunakan generator seperti <code>{{ form.as_table }}</code>)? jelaskan secara gambaran besar bagaimana cara membuat <code>form</code> secara manual.
+    bisa, caranya dengan membuat form list sendiri menggunakan table/tr/td/input lalu isi csrf token untuk
     
