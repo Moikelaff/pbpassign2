@@ -7,7 +7,8 @@
     bisa, caranya dengan membuat form list sendiri menggunakan table/tr/td/input lalu make csrf token untuk ngegive authorization
 
 # 3. Jelaskan proses alur data dari submisi yang dilakukan oleh pengguna melalui HTML form, penyimpanan data pada database, hingga munculnya data yang telah disimpan pada template HTML
-    setelah subimisi, data yang diinput oleh user bisa diakses dengan html method yang dipake. setelah itu data dimasukkan ke database oleh <code>Task.objects.create()</code>, setelah ada di database data di di akses oleh html di <code>{% for todo in list_todolist %} </code> yang nantinya di show ke client.
+    setelah subimisi, data yang diinput oleh user bisa diakses dengan html method yang dipake. setelah itu data dimasukkan ke database oleh Task.objects.create().
+    setelah ada di database data di di akses oleh html di{% for todo in list_todolist %} yang nantinya di show ke client.
 
 # 4. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
     1. startapp
