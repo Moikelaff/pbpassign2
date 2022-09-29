@@ -4,8 +4,7 @@
     jika tidak ada csrf token maka user dapat mengakses link2 yang sensitive yang restricted bagi umum
 ---
 # 2. apakah kita dapat membuat elemen <code>form</code> secara manual(tanpa menggunakan generator seperti <code>{{ form.as_table }}</code>)? jelaskan secara gambaran besar bagaimana cara membuat <code>form</code> secara manual.
-    bisa, caranya dengan membuat form list sendiri menggunakan table/tr/td/input lalu make csrf token untuk ngegive authorization
-
+    bisa, caranya dengan membuat form list sendiri menggunakan table/tr/td/input lalu make csrf token untuk ngeverify aithenticated user
 # 3. Jelaskan proses alur data dari submisi yang dilakukan oleh pengguna melalui HTML form, penyimpanan data pada database, hingga munculnya data yang telah disimpan pada template HTML
     setelah subimisi, data yang diinput oleh user bisa diakses dengan html method yang dipake. setelah itu data dimasukkan ke database oleh Task.objects.create().
     setelah ada di database data di di akses oleh html di{% for todo in list_todolist %} yang nantinya di show ke client.
