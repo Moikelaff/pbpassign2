@@ -1,22 +1,35 @@
-<div>
-    <div class="header">
-        <h3>Hello, {{username}}</h3>
-    </div>
-    <button onclick="location.href='/todolist/create-task'">create new task</button>
-    <button><a href="{% url 'todolist:logout' %}">Logout</a></button>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
 
-    <table border="1">
-        <tr>
-            <th>Date</th>
-            <th>Task</th>
-            <th>Description</th>
-        </tr>
-        {% for todo in list_todo %}
-        <tr>
-            <th>{{todo.date}}</th>
-            <th>{{todo.title}}</th>
-            <th>{{todo.description}}</th>
-        </tr>
-        {% endfor %}
-    </table>
-</div>
+<head>
+    <link rel="stylesheet" href="../static/todolist.css">
+</head>
+
+<body>
+    <div>
+        <div class="header">
+            <h3>Hello, {{username}}</h3>
+        </div>
+        <button onclick="location.href='/todolist/create-task'">create new task</button>
+        <button><a href="{% url 'todolist:logout' %}">Logout</a></button>
+        <div class="items">
+            <table border="1">
+                <tr>
+                    <th>Date</th>
+                    <th>Task</th>
+                    <th>Description</th>
+                </tr>
+                {% for todo in list_todo %}
+                <tr>
+                    <th>{{todo.date}}</th>
+                    <th>{{todo.title}}</th>
+                    <th>{{todo.description}}</th>
+                </tr>
+                {% endfor %}
+        </div>
+        </table>
+    </div>
+</body>
+
+</html>
