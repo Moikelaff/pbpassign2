@@ -65,7 +65,10 @@
     5. dll,
 
 # 4. jelaskan bagaimana cara kamu mengimplementasi checklist di atas
-    dengan menggunakan css internal
-    2. membuat <style> buat setiap html file dgn load static
-    3. utak atik css 
-    4. ngeadd documentary media query
+    implementasi css dengan framework tailwind
+    1. install node
+    2. install tailwind dengan pip
+    3. mengadd {% load static tailwind_tags %} dan {% tailwind_css %} pada setiap html file
+    4. membuat inline css styling 
+    5. utak atik css 
+    6. ngeadd documentary media query
