@@ -1,9 +1,30 @@
-{% load static %}
+{% extends 'base.html' %} {% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="../static/todolist.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .items {
+            box-sizing: border-box;
+            float: left;
+            width: 25%;
+            padding: 0 10px
+        }
+        
+        @media screen and (max-width: 600px) {
+            .items {
+                width: 100%;
+                display: block;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
 </head>
 
 <body>

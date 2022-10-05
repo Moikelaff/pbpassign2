@@ -65,8 +65,7 @@
     5. dll,
 
 # 4. jelaskan bagaimana cara kamu mengimplementasi checklist di atas
-    dengan menggunakan css external
-    1. membuat folder static di todolist
-    2. membuat .css buat setiap html dgn load static
+    dengan menggunakan css internal
+    2. membuat <style> buat setiap html file dgn load static
     3. utak atik css 
     4. ngeadd documentary media query
