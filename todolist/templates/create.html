@@ -1,40 +1,32 @@
-{% extends 'base.html' %} {% load static %}
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %} {% block meta %}
+<title>Create a new todo list</title>
+{% endblock meta %} {% block content %} {% load static tailwind_tags %} {% tailwind_css %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/create.css">
-    <style>
 
-    </style>
-
-</head>
-
-<body>
-    {% block meta %}
-    <title>Create a new todo list</title>
-    {% endblock meta %} {% block content %}
-
-    <div class="create">
-        <h2>Create Todo list</h2>
+<div class="bg-lime-50 h-screen flex flex-col">
+    <div class="bg-zinc-500 w-fit p-6 rounded-lg w-fit p-10">
+        <h2 class="font-bold text-black">Create Todo list</h2>
         <form method="POST" action="">
             {% csrf_token %}
             <table>
                 <tr>
                     <td>Todo:</td>
-                    <td><input type="text" name="todo" placeholder="insert todo" class="form-control"></td>
+                    <td><input class="rounded-lg" type="text" name="todo" placeholder="insert todo" class="form-control"></td>
                 </tr>
                 <tr>
                     <td>Description:</td>
-                    <td><input type="text" name="description" placeholder="Description" class="form-control"></td>
+                    <td><input class="rounded-lg" type="text" name="description" placeholder="Description" class="form-control"></td>
                 </tr>
             </table>
-            <input type="submit" name="submit" value="create">
+            <div class="flex gap-4 justify-center items-center">
+                <div class="rounded-lg p-2 cursor-pointer bg-lime-400 flex">
+                    <input type="submit" name="submit" value="create">
+                </div>
+                <div>
+                    <button class="text-black text-lg"><a href="../">back</a></button>
+                </div>
+            </div>
         </form>
     </div>
-    {% endblock content %}
-</body>
-
-</html>
+</div>
+{% endblock content %}
