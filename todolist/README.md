@@ -55,6 +55,7 @@
     1. .class: select semua tags yang ada di dalam <class="...">
     2. .class1.class2: select tags yang ada di class1 dan class2 di attributenya
     3. .class1 .class2: select sub <class2=""> yang ada di main class <class1="">
+    4. dll
     BY ID
     1. #id: select semua elemen yang idnya sama
     BY ELEMENT
@@ -64,11 +65,21 @@
     4. element + element: misal div + p{} maka select <p> paling atas// yang paling deket dengan <div>
     5. dll,
 
+
 # 4. jelaskan bagaimana cara kamu mengimplementasi checklist di atas
-    implementasi css dengan framework tailwind
-    1. install node
-    2. install tailwind dengan pip
-    3. mengadd {% load static tailwind_tags %} dan {% tailwind_css %} pada setiap html file
-    4. membuat inline css styling 
-    5. utak atik css 
-    6. ngeadd documentary media query
+    implementasi tailwind
+    1. install node.js
+    2. pip install django-tailwind
+    3. add default theme dgn python manage.py tailwind init
+    4. add theme, tailwind ke INSTALLED_APPS
+    5. add TAILWIND_APP_NAME='theme' dan INTERNAL_IPS=["127.0.0.1",]
+    6. install tailwind dependencies dgn python manage.py tailwind install
+    7. add {% tailwind_css %} dan {% load tailwin_tags %} ke setiap html file yang ga di edit di base.html
+    8. add django_browser reload ke INSTALLED_APPS untuk automatic refresh page di dev mode
+    9. add "django_browser_reload.middleware.BrowserReloadMiddleware" di MIDDLEWARE
+    10. add django_browser_reload di urls.py
+    11. start development dengan python manage.py tailwind start
+    12. nambahin django-tailwind di requirements.txt
+    13. add inline tailwind tags pada setiap tags di html files
+    14. add cards dengan grid:grid-cols di todolist
+    15. 
