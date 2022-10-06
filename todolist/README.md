@@ -82,4 +82,4 @@
     12. nambahin django-tailwind di requirements.txt
     13. add inline tailwind tags pada setiap tags di html files
     14. add cards dengan grid:grid-cols di todolist
-    15. 
+    15. add css ke file html lainnya
