@@ -1,18 +1,32 @@
 {% extends 'base.html' %} {% block meta %}
 <title>Account Registration</title>
 {% endblock meta %} {% block content %} {% load static tailwind_tags %} {% tailwind_css %}
-<div class="bg-lime-50">
-    <h2>Registration Form</h2>
-    <form method="POST">
-        {% csrf_token %}
-        <table>
-            {{form.as_table}}
-            <tr>
-                <td></td>
-                <td><input type="submit" name="submit" value="register" /></td>
-            </tr>
-        </table>
-    </form>
+<div class="bg-lime-50 h-screen">
+    <div class="bg-slate-500 justify-center p-2 m-2 rounded-lg flex w-full">
+        <h2 class="text-black font-bold">Registration Form</h2>
+    </div>
+    <div class="flex justify-center items-center">
+        <div class="h-fit p-2 rounded-lg">
+            <form method="POST">
+                {% csrf_token %}
+                <table>
+                    {{form.as_table}}
+                    <tr>
+                        <td></td>
+                        <td>
+                            <div class="flex gap-2 m-2">
+                                <input class="text-black font-bold text-lg" type="submit" name="submit" value="register" />
+                            </div>
+                            <div class="flex gap-2 m-2">
+                                <button class=" text-black font-bold text-lg"><a href="../">back</a></button>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+
 
     {% if messages %}
     <ul>
