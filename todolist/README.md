@@ -67,19 +67,20 @@
 
 
 # 4. jelaskan bagaimana cara kamu mengimplementasi checklist di atas
-    implementasi tailwind
+    styling dengan implementasi framework tailwind
     1. install node.js
     2. pip install django-tailwind
     3. add default theme dgn python manage.py tailwind init
     4. add theme, tailwind ke INSTALLED_APPS
     5. add TAILWIND_APP_NAME='theme' dan INTERNAL_IPS=["127.0.0.1",]
-    6. install tailwind dependencies dgn python manage.py tailwind install
-    7. add {% tailwind_css %} dan {% load tailwin_tags %} ke setiap html file yang ga di edit di base.html
-    8. add django_browser reload ke INSTALLED_APPS untuk automatic refresh page di dev mode
-    9. add "django_browser_reload.middleware.BrowserReloadMiddleware" di MIDDLEWARE
-    10. add django_browser_reload di urls.py
-    11. start development dengan python manage.py tailwind start
-    12. nambahin django-tailwind di requirements.txt
-    13. add inline tailwind tags pada setiap tags di html files
-    14. add cards dengan grid:grid-cols di todolist
-    15. add css ke file html lainnya
+    6. add line NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd" ke dalam settings.py
+    7. install tailwind dependencies dgn python manage.py tailwind install
+    8. add {% tailwind_css %} dan {% load tailwin_tags %} ke setiap html file yang ga di edit di base.html
+    9. add django_browser reload ke INSTALLED_APPS untuk automatic refresh page di dev mode
+    10. add "django_browser_reload.middleware.BrowserReloadMiddleware" di MIDDLEWARE
+    11. add django_browser_reload di urls.py
+    12. start development dengan python manage.py tailwind start
+    13. nambahin django-tailwind di requirements.txt
+    14. add inline tailwind tags pada setiap tags di html files
+    15. add cards dengan grid:grid-cols di todolist
+    16. add css ke file html lainnya

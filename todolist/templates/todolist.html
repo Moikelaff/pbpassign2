@@ -1,5 +1,92 @@
 {% load static tailwind_tags %} {% tailwind_css %}
 <title>todolist</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="jquery-3.6.0.min.js"></script>
+{% extends 'base.html' %} {% block meta %}
+<script>
+    const modal_overlay = document.querySelector('#modal_overlay');
+    const modal = document.querySelector('#modal');
+    const nama = document.getElementById('nama');
+    const description = document.getElementById('description');
+
+    function openModal(value) {
+        const modalCl = modal.classList
+        const overlayCl = modal_overlay
+        if (value) {
+            overlayCl.classList.remove('hidden')
+            setTimeout(() => {
+                modalCl.remove('opacity-0')
+                modalCl.remove('-translate-y-full')
+                modalCl.remove('scale-150')
+                nama.value = '';
+                description.value = '';
+            }, 100);
+        } else {
+            modalCl.add('-translate-y-full')
+            setTimeout(() => {
+                modalCl.add('opacity-0')
+                modalCl.add('scale-150')
+            }, 100);
+            setTimeout(() => overlayCl.classList.add('hidden'), 300);
+        }
+    }
+    $(document).ready(function() {
+        loadData();
+    });
+    $(document).on("submit", function(e) {
+        e.preventDefault();
+        $.ajax({
+            type: "POST",
+            url: "{% url 'todolist:add_ajax' %}",
+            data: {
+                nama: $("#nama").val(),
+                desc: $("#description").val(),
+                csrftoken: "{{ csrf_token }}",
+            },
+            dataType: "json",
+            success: function() {
+                openModal(false)
+                loadData();
+            },
+        });
+    });
+
+    function loadData() {
+        let tab = "";
+        $.ajax({
+            url: "{% url 'todolist:show_json' %}",
+            type: "GET",
+            dataType: "json",
+            success: function(resp) {
+                for (let i of resp) {
+                    let status = i.fields.status ? "Finished" : "Not Yet";
+                    tab += `
+                <div id="${i.pk}" class="bg-white rounded-2xl p-8 flex flex-col gap-2 hover:drop-shadow-2xl transition duration-300 ease-in-out">
+                  <p class="text-center text-xl font-semibold">${i.fields.title}</p>
+                  <p class="text-center text-xs">${i.fields.date}</p>
+                  <div class="flex m-2 p-2 flex-col">
+                    <div class="transition-opacity bg-gray-600 bg-opacity-10 rounded-2xl p-2">
+                      <p class="break-all">${i.fields.description}</p>
+                      <p>
+                        ${status}
+                      </p>
+                    </div>
+                  </div>
+                  <div class="w-full flex justify-center gap-2">
+                    <a href="change/${i.pk}"><button class=" bg-red-600 rounded-2xl p-2 text-white font-bold">Change Status</button></a>
+                    <button class="bg-green-500 rounded-2xl p-2 text-white font-bold delete" onclick="delDB(${i.pk})">Delete</button>
+                  </div>
+                </div>`;
+                    $('#todoCard').html(tab);
+                }
+            },
+            error: function(resp) {
+                console.log('Error?');
+            }
+        })
+    };
+</script>
+
 
 <div class="bg-lime-50 min-h-screen">
     <!-- navbar -->
