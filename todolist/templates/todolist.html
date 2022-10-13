@@ -2,7 +2,6 @@
 <title>todolist</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="jquery-3.6.0.min.js"></script>
-{% extends 'base.html' %} {% block meta %}
 <script>
     // script dari https://hartdev-ctzyoepto-hudadamar21.vercel.app/source-code/tailwindcss-components/modal-with-animation/
     const modal_overlay = document.querySelector('#modal_overlay');
@@ -55,7 +54,7 @@
     function loadData() {
         $.ajax({
             type: "GET",
-            url: "{% url 'todolist:load_ajax' %}",
+            url: "{% url 'todolist:show_json' %}",
             dataType: "json",
             success: function(response) {
                 var html = '';
