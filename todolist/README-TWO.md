@@ -18,3 +18,7 @@
     3. menghapus for loop code pada html
     4. import jquery
     5. membuat document.ready function untuk initial interface
+    6. add script and css mereference: darihttps://hartdev-ctzyoepto-hudadamar21.vercel.app/source-code/tailwindcss-components/modal-with-animation/
+    7. add ajax scripting buat get dan post
+    8. membuat add_ajax di views untuk mengambil POST data dengan POST.get
+    9.

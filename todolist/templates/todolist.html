@@ -4,6 +4,7 @@
 <script src="jquery-3.6.0.min.js"></script>
 {% extends 'base.html' %} {% block meta %}
 <script>
+    // script dari https://hartdev-ctzyoepto-hudadamar21.vercel.app/source-code/tailwindcss-components/modal-with-animation/
     const modal_overlay = document.querySelector('#modal_overlay');
     const modal = document.querySelector('#modal');
     const nama = document.getElementById('nama');
@@ -50,41 +51,25 @@
             },
         });
     });
-
+    // tbd
     function loadData() {
-        let tab = "";
         $.ajax({
-            url: "{% url 'todolist:show_json' %}",
             type: "GET",
+            url: "{% url 'todolist:load_ajax' %}",
             dataType: "json",
-            success: function(resp) {
-                for (let i of resp) {
-                    let status = i.fields.status ? "Finished" : "Not Yet";
-                    tab += `
-                <div id="${i.pk}" class="bg-white rounded-2xl p-8 flex flex-col gap-2 hover:drop-shadow-2xl transition duration-300 ease-in-out">
-                  <p class="text-center text-xl font-semibold">${i.fields.title}</p>
-                  <p class="text-center text-xs">${i.fields.date}</p>
-                  <div class="flex m-2 p-2 flex-col">
-                    <div class="transition-opacity bg-gray-600 bg-opacity-10 rounded-2xl p-2">
-                      <p class="break-all">${i.fields.description}</p>
-                      <p>
-                        ${status}
-                      </p>
-                    </div>
-                  </div>
-                  <div class="w-full flex justify-center gap-2">
-                    <a href="change/${i.pk}"><button class=" bg-red-600 rounded-2xl p-2 text-white font-bold">Change Status</button></a>
-                    <button class="bg-green-500 rounded-2xl p-2 text-white font-bold delete" onclick="delDB(${i.pk})">Delete</button>
-                  </div>
-                </div>`;
-                    $('#todoCard').html(tab);
-                }
+            success: function(response) {
+                var html = '';
+                $.each(response, function(key, item) {
+                    html += '<tr>';
+                    html += '<td>' + item.nama + '</td>';
+                    html += '<td>' + item.description + '</td>';
+                    html += '<td><button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onclick="deleteData(' + item.id + ')">Delete</button></td>';
+                    html += '</tr>';
+                });
+                $('#tbody').html(html);
             },
-            error: function(resp) {
-                console.log('Error?');
-            }
-        })
-    };
+        });
+    }
 </script>
 
 
